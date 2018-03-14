@@ -1,0 +1,29 @@
+@startuml
+class CompanyStatement {
++ revenue : double
++ expenses : double
++ earnings : double
+}
+
+class TaxStatement {
++ companyStatement : CompanyStatement
++ taxRate : double
++ taxes : double
++ earningsAfterTaxes : double
+}
+
+CompanyStatement " 1 " <--o " 1 " TaxStatement
+
+note right of CompanyStatement
+<b>context CompanyStatement::earnings: double derive:</b>
+        <i>self.revenue - self.expenses</i>
+end note
+
+note right of TaxStatement
+<b>context TaxStatement::taxes: double derive:</b>
+        <i>self.companyStatement.earnings * self.taxRate</i>
+<b>context TaxStatement::earningsAfterTaxes: double derive:</b>
+        <i>self.companyStatement.earnings - self.taxes</i>
+end note
+@enduml
+
