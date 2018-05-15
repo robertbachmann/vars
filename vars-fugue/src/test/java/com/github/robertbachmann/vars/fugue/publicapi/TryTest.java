@@ -33,7 +33,7 @@ public class TryTest {
     }
 
     public Try<Integer> f(Try<Integer> a, Try<Integer> b) {
-        Try<Try<Integer>> result = a.map(x -> b.map(y -> x + y));
+        Try<Try<Integer>> result = a.map(x -> b.map(y -> x / y));
         return Try.flatten(result);
     }
 

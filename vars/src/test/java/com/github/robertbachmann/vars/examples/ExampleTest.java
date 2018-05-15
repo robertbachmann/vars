@@ -13,7 +13,7 @@ import static org.testng.AssertJUnit.*;
 @Test
 public class ExampleTest extends SystemOutSpyingTest {
     public ExampleTest() {
-        super(false);
+        super(true);
     }
 
     @Test
