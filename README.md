@@ -264,9 +264,9 @@ When dealing with function chains such as `g(f(...))` care must be taken if `f(.
 fail. 
 
 One way deal with this problem is to Java's `Optional<T>` monad and change `f` and `g` to
-return `Optional.empty` on error. This approach has the drawback that available exception information.
-gets lost. To keep the exception information the pattern from Scala's [Try](http://www.scala-lang.org/api/current/scala/util/Try.html)  
-type can be used. 
+return `Optional.empty` on error. This approach has the drawback that available exception information
+will be lost. To keep the exception information the pattern from Scala's [Try](http://www.scala-lang.org/api/current/scala/util/Try.html) type
+can be used. 
 
 Atlassian's Fugue library provides a Java implementation of the `Try` type. The
 module `vars-fugue` provides integration with Fugue.     
