@@ -291,7 +291,7 @@ public void tryExamplesPlainTry() {
 }
 
 public Try<Integer> f(Try<Integer> a, Try<Integer> b) {
-    Try<Try<Integer>> result = a.map(x -> b.map(y -> x + y));
+    Try<Try<Integer>> result = a.map(x -> b.map(y -> x / y));
     return Try.flatten(result);
 }
 
@@ -323,7 +323,7 @@ assertTrue(g.get().isFailure()); // div-by-zero
 * Add support for Kotlin [`Try`](https://www.javacodegeeks.com/2017/12/kotlin-try-type-functional-exception-handling.html) implementation.
 * Find a (user-friendly) way to re-use Thread Scheduler implementations from RxJava or Reactor.     
 * **Unit Tests**
-    * Raise test code coverage about (currently 70-80%)
+    * Raise test code coverage (currently 70-80%)
     * org.reactivestreams TCK test adapter currently has a race condition that causes flip-flop tests.
      
      
